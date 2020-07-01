@@ -14,3 +14,8 @@ def BinarySearch(key,c):
             return print("%s在数组中的索引为%s"%(key,mid))
     return print("%s不在该数组中"%key)
 BinarySearch(key,c)
+
+
+###
+end
+###

@@ -1,5 +1,7 @@
 #！/usr/bin/python
 # -*- coding: utf-8 -*-
+__author__ = 'cyf'
+
 import pymysql
 
 class caicaiSql():
@@ -55,3 +57,4 @@ class caicaiSql():
             print("事物提交失败")
             self.db.rollback()
         return count
+

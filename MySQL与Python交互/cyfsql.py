@@ -4,7 +4,7 @@ __author__ = 'cyf'
 
 import pymysql
 
-class caicaiSql():
+class cyfSql():
     def __init__(self,host,user,passwd,dbName):
         self.host = host
         self.user = user

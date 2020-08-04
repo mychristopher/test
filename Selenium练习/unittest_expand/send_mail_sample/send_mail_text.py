@@ -12,6 +12,6 @@ msg['Subject'] = Header(subject, 'utf-8')
 # 连接发送邮件
 smtp = smtplib.SMTP()
 smtp.connect("smtp.126.com")
-smtp.login("sender@126.com", "a123456")
-smtp.sendmail("sender@126.com", "receiver@126.com", msg.as_string())
+smtp.login("testingwtb@126.com", "a123456")
+smtp.sendmail("testingwtb@126.com", "testingwtb@126.com", msg.as_string())
 smtp.quit()

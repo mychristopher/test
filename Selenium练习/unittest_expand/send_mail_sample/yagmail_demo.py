@@ -9,3 +9,7 @@ contents = ['This is the body, and here is just text http://somedomain/image.png
 
 # 发送邮件
 yag.send('receiver@126.com', 'send email subject', contents)
+
+
+# 发送多人，列入一个list
+yag.send(['receiver@126.com','bb@126.com','cc@126.com'], 'send email subject', contents)

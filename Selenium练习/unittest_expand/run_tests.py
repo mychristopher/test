@@ -4,15 +4,15 @@ import yagmail
 from HTMLTestRunner import HTMLTestRunner
 
 
-# # 把测试报告作为附件发送到指定邮箱。
-# def send_mail(report):
-#     yag = yagmail.SMTP(user="testingwtb@126.com",
-#                        password="a123456",
-#                        host='smtp.126.com')
-#     subject = "标题，自动化测试报告"
-#     contents = "正文，请查看附件。"
-#     yag.send('testingwtb@126.com', subject, contents, report)
-#     print('email has send out !')
+# 把测试报告作为附件发送到指定邮箱。
+def send_mail(report):
+    yag = yagmail.SMTP(user="testingwtb@126.com",
+                       password="a123456",
+                       host='smtp.126.com')
+    subject = "标题，自动化测试报告"
+    contents = "正文，请查看附件。"
+    yag.send('testingwtb@126.com', subject, contents, report)
+    print('email has send out !')
 
 
 if __name__ == '__main__':

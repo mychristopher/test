@@ -18,6 +18,6 @@ msg.attach(att)
 
 smtp = smtplib.SMTP()
 smtp.connect("smtp.126.com")
-smtp.login("sender@126.com", "a123456")
-smtp.sendmail("sender@126.com", "receiver@126.com", msg.as_string())
+smtp.login("testingwtb@126.com", "a123456")
+smtp.sendmail("testingwtb@126.com", "1366254420@qq.com", msg.as_string())
 smtp.quit()

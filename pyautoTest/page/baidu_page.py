@@ -10,3 +10,5 @@ class BaiduPage(Page):
 
     # 定位一组元素
     search_result = PageElements(xpath="//div/h3/a", describe="搜索结果")
+
+#添加jenkins测试

@@ -1,8 +1,4 @@
- """
-@author:  虫师
-@data: 2019-10-17
-@function pytest 参数使用
-"""
+
 import sys
 import json
 from time import sleep

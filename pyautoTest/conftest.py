@@ -19,7 +19,7 @@ scope参数可以是session， module，class，function； 默认为function
 1.session 会话级别（通常这个级别会结合conftest.py文件使用，所以后面说到conftest.py文件的时候再说）
 2.module 模块级别： 模块里所有的用例执行前执行一次module级别的fixture
 3.class 类级别 ：每个类执行前都会执行一次class级别的fixture
-4.function ：前面实例已经说了，这个默认是默认的模式，函数级别的，每个测试用例执行前都会执行一次function级别的fixture
+4.function ：函数级别，每个测试用例执行前都会执行一次function级别的fixture
 """
 # 定义基本测试环境
 @pytest.fixture(scope='function')
@@ -38,12 +38,17 @@ def pytest_html_results_table_row(report, cells):
     cells.insert(2, html.td(report.description))
     cells.pop()
 
+# str.split(“o”)[0]得到的是第一个o之前的内容
+# str.split(“o”)[1]得到的是第一个o和第二个o之间的内容
+# str.split(“o”)[3]得到的是第三个o后和第四个o前之间的内容
+# str.split("[")[0]得到的是第一个 [ 之前的内容
+# 注意：[ ]内的数值必须小于等于split("")内分隔符的个数，否则会报错，
 
 @pytest.mark.hookwrapper
 def pytest_runtest_makereport(item):
     """
     用于向测试用例中添加用例的开始时间、内部注释，和失败截图等.
-    :param item:
+    :param item:测试用例对象
     """
     pytest_html = item.config.pluginmanager.getplugin('html')
     outcome = yield

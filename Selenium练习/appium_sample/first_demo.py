@@ -10,7 +10,7 @@ desired_caps = {
     'noReset': True
 }
 
-driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
+driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)     #wd 可以理解是WebDriver 的缩写,hub 是指主（中心） 节点，在selenium 分布式里中心节点
 
 driver.find_element_by_id("com.android.calculator2:id/digit_1").click()
 driver.find_element_by_id("com.android.calculator2:id/op_add").click()

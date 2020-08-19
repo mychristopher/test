@@ -7,6 +7,8 @@ import click
 from conftest import REPORT_DIR
 from config import RunConfig
 
+#接受时间元组并返回一个可读的形式为"Tue Dec 11 18:07:14 2008"
+#
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 

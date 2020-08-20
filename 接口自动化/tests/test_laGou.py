@@ -4,12 +4,12 @@
 #Author:WuYa
 
 import  unittest
-from base.method import Method,IsAssert
+from base.method import Method,IsContent
 
 class LaGou(unittest.TestCase):
 	def setUp(self):
 		self.obj=Method()
-		self.p=IsAssert()
+		self.p=IsContent()
 
 	def statusCode(self,r):
 		self.assertEqual(r.status_code, 200)

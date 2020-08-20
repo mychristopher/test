@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testResults version="1.2">
+<httpSample t="2232" it="0" lt="2183" ct="1769" ts="1537969595665" s="true" lb="获取拉钩网职位信息" rc="200" rm="OK" tn="断言 1-1" dt="text" by="25245" sby="1319" ng="1" na="1">
+  <assertionResult>
+    <name>checkStatus</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <assertionResult>
+    <name>jp@gc - JSON Path Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+    <failureMessage></failureMessage>
+  </assertionResult>
+  <assertionResult>
+    <name>jp@gc - JSON Path Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+    <failureMessage></failureMessage>
+  </assertionResult>
+</httpSample>
+<httpSample t="534" it="0" lt="531" ct="165" ts="1537969598041" s="false" lb="获取拉钩网职位信息" rc="200" rm="OK" tn="断言 1-1" dt="text" by="25873" sby="1319" ng="1" na="1">
+  <assertionResult>
+    <name>checkStatus</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <assertionResult>
+    <name>jp@gc - JSON Path Assertion</name>
+    <failure>false</failure>
+    <error>false</error>
+    <failureMessage></failureMessage>
+  </assertionResult>
+  <assertionResult>
+    <name>jp@gc - JSON Path Assertion</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Value expected to be &apos;联想集团&apos;, but found &apos;穆迪&apos;</failureMessage>
+  </assertionResult>
+</httpSample>
+
+</testResults>

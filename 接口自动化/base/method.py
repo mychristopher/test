@@ -26,7 +26,7 @@ class Method:
 			raise  RuntimeError('接口请求发生未知的错误')
 
 
-class IsAssert:
+class IsContent:
 	def __init__(self):
 		self.excel=OperationExcel()
 

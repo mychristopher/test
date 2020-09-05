@@ -1,0 +1,141 @@
+安装命令查找：ananconda show jjhelmus/tensorflow
+
+input：从外部获取变量的值   mindjet mindmanager
+
+占位符  #格式化输出
+格式化输出的意义在于一个字符串中包含了多个变量,这个时候需要用到占位符,然后在后面补全变量.,是代码更加简洁
+num=10
+str1="sunck is a good man"
+f=10.126000
+print("num=%d,str1=%s,f=%.3f"%(num,str1,f))#精确到小数点后三位，四舍五入
+转义字符：\n  换行符；\  将字符转换成特殊含义的字符，反之对特殊字符也起反作用
+'''  ''' 表示打印多行  ；\t  制表符；如果字符串中有许多字符串都需要转义，为了简化，用r表示内部的字符串默认不转义print(r"\\\t\\\")
+#eval(str)
+#功能：将字符串str当成有效的表达式来求值并返回计算结果,并可以求值
+num1 = eval("123")
+print(num1)
+print(type(num1))
+print(eval("12+3"))
+#len(str)   返回字符串的长度
+#lower(str)  转换字符串中大写字母为小写字母
+#upper(str)  转换字符串中的小写字母为大写字母
+#swapcase()  转换字符串中大小写字母，各自转换
+#title()  每个单词的首字母大写
+#center(width[,fillchar]) 返回一个指定宽度的居中字符串，fillchar为填充的字符串，默认空格填充
+#1just(width[,fillchar])  返回一个指定宽度的左对齐字符串，fillchar为填充的字符串，默认空格填充
+#rjust(width[,fillchar])  返回一个指定宽度的右对齐字符串，fillchar为填充的字符串，默认空格填充
+#zfill(width)  返回一个长度为width的字符串，原字符串右对齐，前面补0
+#count(str[,start][,end])  返回字符串中strc出现的次数，可以知道一个范围，默认从头到尾
+#rfind(str[,start][,end])  从左向右检测str字符串是否包含在字符串中，可以指定范围，默认从头到尾。得到的是第一次出现的开始下标，没有返回-1
+#rindex(str,start=0,end=len(str))  跟rfind()一样，只不过如果str不存在的时候会报一个异常
+#lstrip()  截掉字符串左侧指定的字符，默认为空格
+#rstrip()  截掉字符串右侧指定的字符，默认为空格
+
+list（列表）：有序集合，列表中的元素可以是不同类型的
+取值：列表名[下标]
+替换：
+
+for 变量名 in 集合：
+    语句
+逻辑：按顺序取“集合”中的每个元素赋值给“变量”，再去执行语句，如此循环往复
+，直到取完“集合”中的元素截止
+range()函数--列表生成器--生成数列
+for i in range(2,20,2):
+同时遍历下标和元素：
+for index,m in enumerate([1,2,3,4,5]):
+    print(index,m)
+continue   跳过当前循环中的剩余语句，然后继续下一次循环
+
+turtle模块绘图  运动命令、笔画控制命令、其它命令
+done()  程序继续执行
+
+创建只有一个元素的元组，记得加逗号
+tuple = (1,)
+元组元素的访问：元组名[下标]；元组元素不可修改，但可删除整个元组，再新建
+#将列表转成元组
+list = [1,2,3]
+t1=tuple(list)
+print(t1)
+
+split(str="",num)
+以str为分隔符截取字符串，指定num，则仅截取num个字符串 
+splitlines()  按照(\r  \r\n     \n)分隔，keepends==True  会保留换行符，默认为False
+join(seq)  以指定的字符串分隔符，将seq中的所有元素组合成一个字符串
+str1=" ".join(list2)
+max() min()  比较字符串中的最大字符   （按ASCII码进行比较）
+replace(oldstr,newstr,count)  用newstr替换oldstr，默认是全部替换，如果制定了count，那么只替换前count个
+startwith(str,start=0,end=len(str))在给定的范围内判断是否以给定的字符串开头，如果没有指定的范围 ，默认整个字符串
+endwith(str,start=0,end=len(str))
+编码 encode(encoding="utf-8",errors="strict")
+解码 decode
+isalpha() 如果字符串中至少有一个字符且所有的字符都是字母返回True，否则返回False
+isalnum() 如果字符串中至少有一个字符且所有的字符都是字母或数字返回True，否则返回False
+isupper() 
+islower()
+istitle() 如果字符串是标题化的返回True，否则返回False
+isdigit() 如果字符串中只包含数字字符返回True，否则返回False
+isnumeric() 同上
+isdecimal() 字符串值包含十进制字符
+isspace()  如果字符串只包含空格则返回True，否则返回False
+
+字典：使用键值对存储，具有几块的查找速度--key不可变且唯一,字典是无序的
+元素的访问  字典名[key]
+print(dict1["lilei"])
+print(dict1.get("sunck"))
+添加，修改（有就是添加，没有就是修改）
+删除dict.pop("key")
+遍历 for key in dict:
+     for value in dict.values():
+     for k,v in dict.items():
+和list比较的优点：查找和插入的速度极快，不会随着key-value的增加而变慢；需要占用大量的内存，浪费内存多
+
+set:类似dict，是一组key的集合，不存储value--无序和无重复元素的集合
+创建set需要一个list或者tuple或者这dict作为输入集合
+重复元素在set中会自动被过滤
+添加  s1.add(6)  set的元素不能是列表、字典，因为这两者是可变的
+插入整个list、tuple、字符串，打碎插入
+s5.update([6,7,8])
+s5.update((9,10))
+s5.update("sunck")
+删除 s6.remove(3)
+遍历 for i in s7:
+set是没有索引的
+enumerate() 函数用于将一个可遍历的数据对象(如列表、元组或字符串)组合为一个索引序列，同时列出数据和数据下标，一般用在 for 循环当中。
+交集 a1=s8&s9
+并集 a2=s8|s9
+list、set、tuple类型相互转换，可以用来去重复
+
+可迭代对象（Iterable），可以用isinstance()去判断一个对象是否是Iterable对象，可以直接作用于for循环的对象统称为可迭代对象
+1、集合数据类型，如list、tuole、dict、set、string
+2、是generator，包括生成器和带yield的generator function
+
+函数：对功能的封装，遵循标识符原则
+def 函数名（参数列表）：任何传入函数的参数和变量必须放在圆括号之间，用逗号分隔。函数从函数的调用者那里获取的信息
+    语句
+    return 表达式--一般用于结束函数，并返回信息给函数的调用者
+值传递，传递的不可变类型
+引用传递：传递的可变类型
+允许参数调用时参数的顺序与定义时不一致--使用关键字参数
+调用函数时，如果没有传递参数，则使用默认参数，并最好将默认参数放到最后
+加了*的变量他会存放所有未命名的变量参数,如果在函数调用时制定参数，他就是一个空元组
+def func(name,*arr):
+**代表键值对的参数字典
+pass代表一个空语句
+不适用def这样的语句定义函数，使用lambda来创建匿名函数
+格式：lambda  参数1，参数2，......,参数n：expression
+概念：是一个闭包，把一个函数当做参数返回一个替代版的函数，本质上就是一个返回函数的函数，装饰打扮
+装饰器
+偏函数
+
+作用域：局部、全局、内建
+异常处理：当程序遇到问题时不让程序结束，而越过错误继续向下执行
+
+一个.py文件就是一个模块
+
+Pillow   非常强大的处理图像的工具库
+pip install Pillow
+如果报错，pip install --upgrade
+
+类的属性：对应类中的成员变量
+类的行为：对应类中的成员方法
+

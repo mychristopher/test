@@ -1,0 +1,77 @@
+github.com/mozilla/geckodriver/releases 驱动
+sublime/cmder/chrome/firefox
+html：网页基础，用于显示数据
+js：网页脚本，控制页面的数据
+css：用于控制文件样式
+xml：用来传输和存储数据
+json：用来传输和存储数据
+http：网络请求协议
+xpath：XPath即为XML路径语言，它是一种用来确定XML文档中某部分位置的语言。
+
+软件开发的生命周期：
+1、测试人员全程参与
+需求调研--需求分析评审--软件架构设计--编码--单元测试（要求开发人员写）--集成测试--系统测试--预发布系统测试--上线
+更新了需求功能，及时更新接口文档；开源，功能强大，兼容（语言，系统）
+2、测试分类
+黑盒测试（功能测试）：功能符合用户的需求；
+白盒测试：知道内部的逻辑，验证符合用户的需求；
+冒烟测试：主功能、主路径测试
+自动化测试：人工测试转为工具自动执行（没有谁能完全取代谁，分场景）
+性能测试：（一般针对接口）模拟多种峰值和负载去测试各项性能指标，是否需要加服务器jmeter，loadrunner
+3、自动化测试和手动测试的优缺点
+适合自动化：软件需求变更少，项目周期长，稳定性强；否则只能抽取部分功能做自动化测试；稳定性要强，环境要隔离独立（开发一套环境、一套测试）
+优点：方便，自动验证；更好地利用资源，节约人力成本；覆盖更全，增加软件的稳定性
+语言选择：python java ruby php
+
+selenium定位网页元素技巧：
+通过元素定位
+使用css定位（复制样式css选择器）
+通过xpath定位（xpath语法：“//”是全部的意思，即全文扫描，"/"是相邻的意思，*是所有元素，“..”是元素的父节点，“.”是当前节点）
+
+ActionChains模拟用户行为：
+perform（ ）执行链中的所有动作
+click（on_element=None）  单击鼠标左键
+context_click(on_element=None) 点击鼠标右键
+double_click(on_element=None) 双击鼠标左键
+move_to_element(to_element) 鼠标移动到某个元素
+ele.send_keys(keys_to_send) 发送某个词到当前焦点的元素
+
+login模拟用户登陆：
+网页等待时间：
+强制等待--from time import sleep,浪费资源，必须等待
+隐形等待--driver.implicitly_wait(10) 在规定时间内网页加载完成则执行下一步
+显性等待--WebDriverWait 需要配合
+          until和until_not，程序每隔N秒检查一次，如果成功，则执行下一步，否则继续等待，直到超过设置的最长
+语法：WebDriverWait(driver,timeout,poll_frequency=0.5,ignored_exceptions=None)
+结论：隐性等待和显性等待可以同时用，等待的最长时间取两者之中的较大者
+
+网页单选框资料实践
+页面弹窗处理：需要先切换窗口  switch_to_alert
+accept()、dismiss()
+验证码常见解决方案：
+1、破解验证码：OCR识别、人工智能 --tesseract-ocr
+2、绕过验证码：让开发人员临时关闭验证码；或者提供一个万能的验证码（安全性需要保密，一般在开发测试环境使用）；使用cookie（登录主要是为了拿cookie，获取登录凭证）
+使用webdriver自动截图：
+driver.get_screenshot_as_file("./error.png")
+
+单元测试unittest：是指对软件中的最小可测试单元进行检查和验证，最小可测试功能模块。如C语言中指一个函数java里类
+unittest框架是python的单元测试框架
+unittest=testcase+testresult   执行用例+结果
+1、用import语句引入unittest的使用；
+2、测试的类都继承于TestCase类；
+3、setUp（）测试前的初始化工作；tearDown（）测试后的清除工作
+4、所有类中方法的入参为self，定义方法的变量也要“self.变量”，self总是指调用时的类的实例。
+5、unittest.main()方法会搜索该模块下所有以test开头的测试用例方法，并自动执行它们
+
+测试套件TestSuite介绍
+1、利用unttest执行流程测试而非单元测试
+2、控制unittest的执行顺序
+unittest.TestSuite()类来表示一个测试用例集：确定测试用例顺序；如果一个class中有四个test开头的方法，则加载到suite中时则有四个测试用例；由TestLoder加载TestCase到TestSuite
+verbosity参数可以控制 执行结果的输出，0是简单报告、1是一般报告、2是详细报告；会在每个成功的用例前面有个“.”每个失败的用例前面有个“F”
+
+TestSuite生成测试报告：
+HTMLTestRunner是python标准库的unittest模块的一个扩展，它可以生成HTML测试报告
+
+unittest中HTML测试报告优化：为每一个测试用例添加说明，那么将会使报告更加异读懂，工作中汇报数据的技巧
+u"test_one方法"
+

@@ -1,7 +1,7 @@
 #!/use/bin/env python
 #coding:utf-8 
 
-#Author:cyf
+#Author:WuYa
 
 
 import  requests
